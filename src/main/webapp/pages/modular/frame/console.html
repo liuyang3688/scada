@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>${systemName}</title>
+    <link rel="stylesheet" href="${ctxPath}/assets/common/layui/css/layui.css"/>
+    <link rel="stylesheet" href="${ctxPath}/assets/common/module/admin.css?v=311"/>
+    <link rel="stylesheet" href="${ctxPath}/assets/expand/css/style.css" media="all"/>
+
+    <style>
+        /** 卡片轮播图样式 */
+        .admin-carousel .layui-carousel-ind {
+            position: absolute;
+            top: -41px;
+            text-align: right;
+        }
+
+        .admin-carousel .layui-carousel-ind ul {
+            background: 0 0;
+        }
+
+        .admin-carousel .layui-carousel-ind li {
+            background-color: #e2e2e2;
+        }
+
+        .admin-carousel .layui-carousel-ind li.layui-this {
+            background-color: #999;
+        }
+
+        /** 广告位轮播图 */
+        .admin-news .layui-carousel-ind {
+            height: 45px;
+        }
+
+        .admin-news a {
+            display: block;
+            line-height: 60px;
+            text-align: center;
+        }
+        /** 统计快捷方式样式 */
+        .console-link-block {
+            display: block;
+            position: relative;
+            color: #fff;
+            font-size: 18px;
+            padding: 25px 20px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, .15);
+            background-color: rgb(155, 197, 57);
+        }
+
+        .console-link-block .console-link-block-num {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .console-link-block .console-link-block-icon {
+            height: 70px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .console-link-block .console-link-block-band {
+            background-color: rgb(227, 42, 22);
+            font-size: 14px;
+            position: absolute;
+            width: 80px;
+            padding: 2px 0;
+            text-align: center;
+            transform: rotate(45deg);
+            right: -21px;
+            top: 8px;
+            color: rgba(255, 255, 255, .9);
+        }
+
+        /** //统计快捷方式样式end */
+
+        /** 设置每个快捷块的颜色 */
+        #consoleLink > div:first-child .console-link-block {
+            background-color: rgb(155, 197, 57);
+        }
+
+        #consoleLink > div:nth-child(2) .console-link-block {
+            background-color: rgb(85, 165, 234);
+        }
+
+        #consoleLink > div:nth-child(3) .console-link-block {
+            background-color: rgb(157, 175, 291);
+        }
+
+        #consoleLink > div:nth-child(4) .console-link-block {
+            background-color: rgb(245, 145, 162);
+        }
+
+        #consoleLink > div:nth-child(5) .console-link-block {
+            background-color: rgb(254, 170, 79);
+        }
+
+        #consoleLink > div:last-child .console-link-block {
+            background-color: rgb(64, 212, 176);
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- 加载动画，移除位置在common.js中 -->
+<div class="page-loading">
+    <div class="rubik-loader"></div>
+</div>
+
+<!-- 正文开始 -->
+<div class="layui-fluid">
+    <div class="layui-card-body" style="text-align: center;">
+        <h2 style="margin-top: 50px;margin-bottom: 50px;font-size: 28px;color: #91ADDC;">欢迎使用EasyWeb管理系统 !</h2>
+        <!--<img src="../../assets/images/welcome.png" style="max-width: 100%;">-->
+    </div>
+    <div id="consoleLink" class="layui-row layui-col-space15">
+        <div class="layui-col-lg4 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/system/user.html" ew-title="外出申请">
+                <div class="console-link-block-num">15</div>
+                <div class="console-link-block-text">外出申请</div>
+                <div class="console-link-block-band">待审批</div>
+                <img class="console-link-block-icon" src="../../assets/images/homepic1.png">
+            </div>
+        </div>
+        <div class="layui-col-lg4 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/system/role.html" ew-title="请假审批">
+                <div class="console-link-block-num">13</div>
+                <div class="console-link-block-text">请假审批</div>
+                <div class="console-link-block-band">待审批</div>
+                <img class="console-link-block-icon" src="../../assets/images/homepic2.png">
+            </div>
+        </div>
+        <div class="layui-col-lg4 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/system/authorities.html" ew-title="研发周报">
+                <img class="console-link-block-icon" src="../../assets/images/homepic3.png">
+                <div class="console-link-block-num">22</div>
+                <div class="console-link-block-text">研发周报</div>
+                <div class="console-link-block-band">去查看</div>
+            </div>
+        </div>
+        <div class="layui-col-lg4 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/system/loginRecord.html" ew-title="研发月报">
+                <img class="console-link-block-icon" src="../../assets/images/homepic4.png">
+                <div class="console-link-block-num">18</div>
+                <div class="console-link-block-text">研发月报</div>
+                <div class="console-link-block-band">去查看</div>
+            </div>
+        </div>
+        <div class="layui-col-lg4 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/plugin/dialog.html" ew-title="拜访记录">
+                <img class="console-link-block-icon" src="../../assets/images/homepic5.png">
+                <div class="console-link-block-num">11</div>
+                <div class="console-link-block-text">拜访记录</div>
+                <div class="console-link-block-band">去查看</div>
+            </div>
+        </div>
+        <div class="layui-col-lg4 layui-col-md4 layui-col-sm6 layui-col-xs12">
+            <div class="console-link-block" ew-href="page/plugin/notice.html" ew-title="项目申报">
+                <img class="console-link-block-icon" src="../../assets/images/homepic6.png">
+                <div class="console-link-block-num">26</div>
+                <div class="console-link-block-text">项目申报</div>
+                <div class="console-link-block-band">待审批</div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">项目介绍</div>
+                <div class="layui-card-body">
+                    <table class="layui-table layui-text">
+                        <colgroup>
+                            <col width="100">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td>项目名称</td>
+                            <td>供热管理系统</td>
+                        </tr>
+                        <tr>
+                            <td>系统版本</td>
+                            <td>旗舰版 v2.3</td>
+                        </tr>
+                        <tr>
+                            <td>官方地址</td>
+                            <td><a href="https://www.stylefeng.cn/" target="_blank">https://www.reliang.cn</a></td>
+                        </tr>
+                        <tr>
+                            <td>gitee地址</td>
+                            <td><a href="https://gitee.com/stylefeng/guns" target="_blank">https://gitee.com/reliang</a></td>
+                        </tr>
+                        <tr>
+                            <td>主要特色</td>
+                            <td>热量 / 管理 / 能源</td>
+                        </tr>
+                        <tr>
+                            <td>获取源码</td>
+                            <td>
+                                <a href="" target="_blank" class="layui-btn layui-btn-danger layui-btn-sm">发送邮件</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>获取文档</td>
+                            <td>
+                                <a href="/" target="_blank" class="layui-btn layui-btn-sm">联系作者</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">前端框架</div>
+                <div class="layui-card-body">
+                    <table class="layui-table layui-text">
+                        <colgroup>
+                            <col width="100">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td>基础框架</td>
+                            <td><a href="https://www.layui.com/" target="_blank">layui v2.4.5</a></td>
+                        </tr>
+                        <tr>
+                            <td>基础框架</td>
+                            <td><a href="https://easyweb.vip/" target="_blank">easyweb v3.1.1</a></td>
+                        </tr>
+                        <tr>
+                            <td>树形框架</td>
+                            <td><a href="http://www.treejs.cn/v3/main.php#_zTreeInfo" target="_blank">zTree v3.5.28</a></td>
+                        </tr>
+                        <tr>
+                            <td>其他框架</td>
+                            <td>jQuery、layui周边框架</td>
+                        </tr>
+                        <tr>
+                            <td>主要特色</td>
+                            <td>易上手 / 简约 / 依赖少</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">后台框架</div>
+                <div class="layui-card-body">
+                    <table class="layui-table layui-text">
+                        <colgroup>
+                            <col width="100">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                        <tr>
+                            <td>核心框架</td>
+                            <td>Spring Boot</td>
+                        </tr>
+                        <tr>
+                            <td>视图渲染</td>
+                            <td>Spring MVC、<a href="http://ibeetl.com" target="_blank">Beetl</a></td>
+                        </tr>
+                        <tr>
+                            <td>持久层</td>
+                            <td>MyBatis、Druid、<a href="http://mp.baomidou.com" target="_blank">MyBatis-Plus</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>权限框架</td>
+                            <td>Shiro、JWT(API接口权限)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>数据库</td>
+                            <td>支持Mysql、Oracle、Postgre SQL、Sql Server</td>
+                        </tr>
+                        <tr>
+                            <td>其他</td>
+                            <td>代码生成器</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- js部分 -->
+@/* 加入contextPath属性和session超时的配置 */
+<script type="text/javascript">
+    var Feng = {
+        ctxPath: "",
+        addCtx: function (ctx) {
+            if (this.ctxPath === "") {
+                this.ctxPath = ctx;
+            }
+        }
+    };
+    Feng.addCtx("${ctxPath}");
+</script>
+
+<script type="text/javascript" src="${ctxPath}/assets/common/layui/layui.js"></script>
+<script type="text/javascript" src="${ctxPath}/assets/common/js/common.js?v=311"></script>
+
+<script>
+    layui.use(['layer', 'carousel'], function () {
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var carousel = layui.carousel;
+        var device = layui.device;
+
+        // 渲染轮播
+        carousel.render({
+            elem: '.layui-carousel',
+            width: '100%',
+            height: '60px',
+            arrow: 'none',
+            autoplay: true,
+            trigger: device.ios || device.android ? 'click' : 'hover',
+            anim: 'fade'
+        });
+    });
+</script>
+</body>
+
+</html>
